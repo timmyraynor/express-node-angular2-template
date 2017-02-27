@@ -1,3 +1,5 @@
 .tscache/*
 dist/*
 node_modules/*
+public/**/*.js.map
+public/*.js.map
