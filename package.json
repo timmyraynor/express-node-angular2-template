@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "NODE_ENV=development nodemon ./bin/www",
     "grunt": "grunt",
-    "start": "npm run build & npm run grunt & concurrently \"npm run build:watch\" \"node ./bin/www\"",
+    "start": "npm run grunt ts & npm run build & npm run grunt & concurrently \"npm run build:watch\" \"node ./bin/www\"",
     "build": "tsc -p public/",
     "build:watch": "tsc -p public/ -w",
     "prestart": "npm run build",
