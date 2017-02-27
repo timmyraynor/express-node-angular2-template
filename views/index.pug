@@ -1,0 +1,45 @@
+html(lang="en")
+  head
+    script(src="node_modules/core-js/client/shim.min.js")
+    script(src="node_modules/zone.js/dist/zone.js")
+    script(src="node_modules/systemjs/dist/system.src.js")
+    script(src="systemjs.config.js")
+
+    script(src="node_modules/jquery/dist/jquery.js")
+
+    link(href="node_modules/bootstrap/dist/css/bootstrap.css",rel="stylesheet")
+    script(src="node_modules/bootstrap/dist/js/bootstrap.js")
+
+    link(href="node_modules/font-awesome/css/font-awesome.css",rel="stylesheet")
+
+    link(href="node_modules/gentelella/build/css/custom.css",rel="stylesheet")
+    script(href="node_modules/gentelella/build/js/custom.js")
+
+    script.
+      System.import('main').catch(function(err){ console.error(err); });
+  body(class="nav-md")
+    div(class="container body")
+        div(class="main_container")
+            div(class="col-md-3 left_col")
+                div(class="left_col scroll-view")
+                    div(class="navbar nav_title",style="border: 0;")
+                        a(href="index.html",class="site_title")
+                          i(class="fa fa-paw") 
+                          span
+                            |Gentelella Alela!
+                    div(class="clearfix")
+                    div(id="sidebar-menu",class="main_menu_side hidden-print main_menu")
+                        div(class="menu_section active")
+                            h3
+                              |General
+                            ul(class="nav side-menu",style="")
+                                li(class="active")
+                                  a
+                                    i(class="fa fa-home")
+                                     |Home 
+                                     span(class="fa fa-chevron-down")
+            my-app
+            footer
+                div(class="pull-right")
+                    |Hatter - Hatter Big Data Support Team
+                div(class="clearfix")
