@@ -7,8 +7,9 @@
   "scripts": {
     "dev": "NODE_ENV=development nodemon ./bin/www",
     "grunt": "grunt",
-    "start": "npm run grunt ts & npm run build & npm run grunt & concurrently \"npm run grunt watch\" \"node ./bin/www\"",
-    "build": "tsc -p public/ & npm run grunt copy:modbuild"
+    "start": "npm run grunt ts & npm run build & npm run grunt & concurrently \"npm run grunt watch\" \"node ./bin/www\" \"node run build:watch\"",
+    "build": "tsc -p public/ --sourceMap -w & npm run grunt copy:modbuild",
+    "build:watch": "tsc -p public/ --sourceMap -w"
   },
   "dependencies": {
     "@angular/common": "~2.4.0",
