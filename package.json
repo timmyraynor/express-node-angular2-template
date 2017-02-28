@@ -7,17 +7,8 @@
   "scripts": {
     "dev": "NODE_ENV=development nodemon ./bin/www",
     "grunt": "grunt",
-    "start": "npm run grunt ts & npm run build & npm run grunt & concurrently \"npm run build:watch\" \"node ./bin/www\"",
-    "build": "tsc -p public/",
-    "build:watch": "tsc -p public/ -w",
-    "prestart": "npm run build",
-    "preprotractor": "webdriver-manager update",
-    "protractor": "protractor protractor.config.js",
-    "pretest": "npm run build",
-    "test": "concurrently \"npm run build:watch\" \"karma start karma.conf.js\"",
-    "pretest:once": "npm run build",
-    "test:once": "karma start karma.conf.js --single-run",
-    "lint": "tslint ./src/**/*.ts -t verbose"
+    "start": "npm run grunt ts & npm run build & npm run grunt & concurrently \"npm run grunt watch\" \"node ./bin/www\"",
+    "build": "tsc -p public/ & npm run grunt copy:modbuild"
   },
   "dependencies": {
     "@angular/common": "~2.4.0",
