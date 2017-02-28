@@ -32,7 +32,8 @@ module.exports = function(grunt) {
               "bootstrap/dist/**",
               "gentelella/build/**",
               "jquery/dist/**",
-              "font-awesome/**"
+              "font-awesome/**",
+              "bootstrap-material-design/dist/**"
             ],
             dest: "./dist/public/node_modules"
           }
