@@ -16,11 +16,24 @@ module.exports = function(grunt) {
             cwd: "./views",
             src: ["**"],
             dest: "./dist/views"
-          },
+          }
+        ]
+      },
+      modbuild:{
+        files: [
           {
             expand: true,
             cwd: "./node_modules",
-            src: ["@angular/**","zone.js/**","systemjs/**","core-js/**","bootstrap/dist/**","gentelella/build/**", "jquery/dist/**", "font-awesome/**"],
+            src: [
+              "@angular/**",
+              "zone.js/**",
+              "systemjs/**",
+              "core-js/**",
+              "bootstrap/dist/**",
+              "gentelella/build/**",
+              "jquery/dist/**",
+              "font-awesome/**"
+            ],
             dest: "./dist/public/node_modules"
           }
         ]
@@ -45,8 +58,8 @@ module.exports = function(grunt) {
         tasks: ["ts"]
       },
       views: {
-        files: ["views/**/*.pug"],
-        tasks: ["copy"]
+        files: ["views/**/*.pug", "public/**"],
+        tasks: ["ts","copy:build"]
       }
     }
   });
@@ -56,7 +69,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-ts");
 
   grunt.registerTask("default", [
-    "copy",
+    "copy:build",
     "ts"
   ]);
 
